@@ -72,10 +72,14 @@ class UserController extends Controller
 
         $user = $request->user();
 
+        // dd($request->all());
         $request->user()->update(
-            ['username'=>$request->username,
-            'password'=>$request->password,]
+            [
+                'username'=>$request->username,
+                'password'=>$request->password,
+            ]
         );
+         
 
         $u = [
             'id'=>$user->id,

@@ -13,6 +13,6 @@ Route::post('/users',[UserController::class, 'register']);
 Route::post('/users/login',[UserController::class, 'login']);
 Route::prefix('/users')->middleware('auth:sanctum')->group(function(){
     Route::get('/current',[UserController::class, 'current']);
-    Route::patch('/current',[UserController::class, 'update']);
+    Route::patch('/current/{id}',[UserController::class, 'update']);
     Route::delete('/logout',[UserController::class, 'logout']);
 });
